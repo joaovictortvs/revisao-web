@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Teste",
+      "email": "teste@gmail.com",
+      "password": 1234
+    },
+    {
+      "id": "08314446702243504071891991202404",
+      "name": "teste",
+      "email": "teste@gmail.com",
+      "password": 1234
+    },
+    {
+      "id": "96717739906896146036069324314719",
+      "name": "testedanillo",
+      "email": "teste@gmail.com",
+      "password": 1234
+    },
+    {
+      "id": "20548154254320395029398446312779",
+      "name": "teste2",
+      "email": "teste2@gmail.com",
+      "password": 1234
+    },
+    {
+      "id": "80814390105900185966530213593941",
+      "name": "teste3",
+      "email": "teste@gmail.com",
+      "password": 1234
+    },
+    {
+      "id": "45093144319785564140239149543465",
+      "name": "testeEmail",
+      "email": "testeEmail@gmail.com",
+      "password": 1111
+    }
+  ]
+}

@@ -18,7 +18,7 @@ export default function Home() {
                 <div className="space-y-4 flex flex-col w-4/6">
                   <div className="flex flex-col">
                       <label htmlFor="i_email">Email:</label>
-                      <input type="text" id="i_email" className="border sm:py-2 px-4 bg-gray-50 text-base"/>
+                      <input type="email" id="i_email" className="border sm:py-2 px-4 bg-gray-50 text-base"/>
                   </div>
                   <div className="flex flex-col">
                       <label htmlFor="i_senha">Senha:</label>
