@@ -1,6 +1,37 @@
+'use client'
 import Link from "next/link";
+import { useState} from 'react'
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+
+  const router = useRouter()
+
+  const [emailUser, setEmailUser] = useState<string>('')
+  const [senhaUser, setSenhaUser] = useState<number>(0)
+
+  function Login(email: string, senha: number){
+    const url = `http://localhost:3000/api?email=${encodeURIComponent(email)}&password=${encodeURIComponent(senha)}`;
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        "Content-Type": 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+        // ver oque fazer quando o login for confirmado
+        const loginConfirm = data.confirmLogin
+        if(loginConfirm === true){
+            router.push('/myAccount')
+        } else {
+          // mostrar tela de erro.
+          alert('funfou não')
+        }
+    })
+  }
+
   return (
     <div className="w-screen h-screen bg-gray-200 flex justify-center items-center">
         <div className="text-black bg-amber-50 max-w-5/6 h-auto sm:h-4/6 sm:w-5/6 flex flex-col sm:flex-row items-center rounded-2xl overflow-hidden">
@@ -18,13 +49,13 @@ export default function Home() {
                 <div className="space-y-4 flex flex-col w-4/6">
                   <div className="flex flex-col">
                       <label htmlFor="i_email">Email:</label>
-                      <input type="email" id="i_email" className="border sm:py-2 px-4 bg-gray-50 text-base"/>
+                      <input type="email" id="i_email" className="border sm:py-2 px-4 bg-gray-50 text-base" required onChange={(e)=>{setEmailUser(e.target.value)}}/>
                   </div>
                   <div className="flex flex-col">
                       <label htmlFor="i_senha">Senha:</label>
-                      <input type="password" id="i_senha" className="border sm:py-2 px-4 bg-gray-50 text-base"/>
+                      <input type="password" id="i_senha" className="border sm:py-2 px-4 bg-gray-50 text-base" required onChange={(e)=>{setSenhaUser(Number(e.target.value))}}/>
                   </div>
-                  <button className=" border-gray-600 bg-gray-300 sm:py-2 px-6 cursor-pointer hover:bg-amber-50 hover:outline transition rounded-xl mb-4">Entrar</button>
+                  <button className=" border-gray-600 bg-gray-300 sm:py-2 px-6 cursor-pointer hover:bg-amber-50 hover:outline transition rounded-xl mb-4" onClick={()=>Login(emailUser, senhaUser)}>Entrar</button>
                 </div>
                 <div className="flex flex-col text-sm sm:text-normal mb-4">
                     <Link href={'/register'}>Ainda não é cliente? Clique aqui.</Link>

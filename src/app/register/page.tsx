@@ -41,13 +41,8 @@ export default function Register(){
         .then(res => res.json())
         .then(res => console.log(res));
 
-        voltarPagLogin();
     }
 
-    function voltarPagLogin(): void {
-        const router = useRouter();
-        router.push('')
-    } // corrigir isso aqui
 
     return(
         <div className="w-screen h-screen bg-gray-200 flex justify-center items-center">
