@@ -3,12 +3,16 @@ import Link from "next/link";
 import { useState} from 'react'
 import { useRouter } from "next/navigation";
 
+import Message from "@/components/Message";
+
 export default function Home() {
 
   const router = useRouter()
 
   const [emailUser, setEmailUser] = useState<string>('')
   const [senhaUser, setSenhaUser] = useState<number>(0)
+
+  const [msgLoginIncorrect, setMsgLoginIncorrect] = useState<boolean>(false)
 
   function Login(email: string, senha: number){
     const url = `http://localhost:3000/api?email=${encodeURIComponent(email)}&password=${encodeURIComponent(senha)}`;
@@ -21,19 +25,23 @@ export default function Home() {
     })
     .then(res => res.json())
     .then(data => {
-        // ver oque fazer quando o login for confirmado
         const loginConfirm = data.confirmLogin
         if(loginConfirm === true){
             router.push('/myAccount')
         } else {
           // mostrar tela de erro.
-          alert('funfou não')
+          setMsgLoginIncorrect(true)
+
+          setTimeout(()=>{
+            setMsgLoginIncorrect(false)
+          }, 2000)
         }
     })
   }
 
   return (
-    <div className="w-screen h-screen bg-gray-200 flex justify-center items-center">
+    <div className="w-screen h-screen bg-gray-200 flex-col flex justify-center items-center">
+        {msgLoginIncorrect && <Message/>}
         <div className="text-black bg-amber-50 max-w-5/6 h-auto sm:h-4/6 sm:w-5/6 flex flex-col sm:flex-row items-center rounded-2xl overflow-hidden">
             <div className="w-3/6 flex flex-col items-center justify-start  h-full border-b sm:border-r sm:border-b-0 mx-2 mb-2">
                 <div className="h-2/6 flex items-center">
