@@ -26,8 +26,9 @@ export default function Home() {
     .then(res => res.json())
     .then(data => {
         const loginConfirm = data.confirmLogin
+        const userData = data.user
         if(loginConfirm === true){
-            router.push('/myAccount')
+            router.push(`/myAccount?id=${userData.id}`)
         } else {
           // mostrar tela de erro.
           setMsgLoginIncorrect(true)
@@ -41,7 +42,7 @@ export default function Home() {
 
   return (
     <div className="w-screen h-screen bg-gray-200 flex-col flex justify-center items-center">
-        {msgLoginIncorrect && <Message/>}
+        {msgLoginIncorrect && <Message msg={'Não foi possível fazer o login. E-mail ou senha incorretos.'}/>}
         <div className="text-black bg-amber-50 max-w-5/6 h-auto sm:h-4/6 sm:w-5/6 flex flex-col sm:flex-row items-center rounded-2xl overflow-hidden">
             <div className="w-3/6 flex flex-col items-center justify-start  h-full border-b sm:border-r sm:border-b-0 mx-2 mb-2">
                 <div className="h-2/6 flex items-center">

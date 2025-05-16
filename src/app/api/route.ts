@@ -63,7 +63,7 @@ export async function GET(request: Request){
     const user = data.find((user)=> user.email === email);
     const confirmLogin = user?.password === password;
 
-    return new Response(JSON.stringify({ confirmLogin }), {
+    return new Response(JSON.stringify({ confirmLogin, user }), {
         status: 200,
         headers: { "Content-Type": 'application/json' }
     })
