@@ -1,16 +1,14 @@
 'use client'
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { useSearchParams, useRouter} from "next/navigation"
+import { useRouter } from "next/navigation"
 
 import Message from "@/components/Message"
 
 export default function MyAccount(){
 
     const router = useRouter();
-
-    const searchParams = useSearchParams()
-    const id = searchParams.get('id')
+    const id = sessionStorage.getItem('id')
 
     const [nome, setNome] = useState<string>('')
     const [email, setEmail] = useState<string>('')
@@ -29,6 +27,7 @@ export default function MyAccount(){
             .then(res => {
                 setMsgConfirmDelete(false)
                 router.push('/')
+                sessionStorage.removeItem('id')
             })
     
         } else {
@@ -67,7 +66,7 @@ export default function MyAccount(){
                     <span>Email: {email ? email : 'carregando'}</span>
                     <span>Assinatura: {assinatura ? assinatura : 'escolha sua assinatura'}</span>
                 </section>
-                <Link href={'/perfil'} className="bg-blue-600 cursor-pointer w-1/6 px-2 py-2 rounded-sm text-center">
+                <Link href={`/myAccount/perfil`} className="bg-blue-600 cursor-pointer w-1/6 px-2 py-2 rounded-sm text-center">
                     Alterar meus dados
                 </Link>
                 <button className="bg-red-500 cursor-pointer w-1/6 px-2 py-2 rounded-sm" onClick={()=>deleteAccount()}>

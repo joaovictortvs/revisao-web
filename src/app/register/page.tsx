@@ -2,12 +2,16 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 
+import Message from "@/components/Message";
+
 export default function Register(){
 
     const [nome, setNome] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [confirmEmail, setConfirmEmail] = useState<string>('')
     const [senha, setSenha] = useState<number>(0)
+
+    const [msgError, setMsgError] = useState(false)
 
     type registerData = {
         name: string;
@@ -22,7 +26,11 @@ export default function Register(){
         if(emailR === confirmEmailR){
             emailVerificado = emailR
         } else {
-            throw new Error('Verifique se o e-mail está correto.')
+            setMsgError(true)
+            setTimeout(()=>{
+                setMsgError(false)
+            }, 2000)
+            return
         }
 
         const dadosRegistro: registerData = {
@@ -46,6 +54,7 @@ export default function Register(){
 
     return(
         <div className="w-screen h-screen bg-gray-200 flex justify-center items-center">
+            {msgError && <Message msg="Verifique se o e-mail está correto."/>}
             <div className="text-black bg-amber-50 max-w-5/6 h-auto sm:h-4/6 sm:w-4/6 flex flex-col justify-center sm:flex-row items-center rounded-2xl overflow-hidden"> 
                 <div className="h-full w-3/6 flex flex-col items-center">
                     <div className="flex h-1/6 w-full items-center justify-center">

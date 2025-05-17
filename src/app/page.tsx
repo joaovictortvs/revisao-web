@@ -29,6 +29,7 @@ export default function Home() {
         const userData = data.user
         if(loginConfirm === true){
             router.push(`/myAccount?id=${userData.id}`)
+            sessionStorage.setItem('id', `${userData.id}`)
         } else {
           // mostrar tela de erro.
           setMsgLoginIncorrect(true)
