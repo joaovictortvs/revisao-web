@@ -9,17 +9,17 @@ export default function Register(){
     const [nome, setNome] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [confirmEmail, setConfirmEmail] = useState<string>('')
-    const [senha, setSenha] = useState<number>(0)
+    const [senha, setSenha] = useState<string>('')
 
     const [msgError, setMsgError] = useState(false)
 
     type registerData = {
         name: string;
         email: string;
-        password: number;
+        password: string;
     }
 
-     function enviarRegistro(nomeR: string, emailR: string, confirmEmailR: string, senhaR: number){
+     function enviarRegistro(nomeR: string, emailR: string, confirmEmailR: string, senhaR: string){
 
         let emailVerificado: string;
 
@@ -74,7 +74,7 @@ export default function Register(){
                     </div>
                     <div className="flex flex-col w-3/6 ">
                         <label htmlFor="i_senha" className="self-start">Senha:</label>
-                        <input type="password" name="i_senha" id="i_senha" required placeholder="Digite sua senha" className="border sm:py-2 px-6 bg-gray-50 text-base w-full" onChange={(e)=>{setSenha(Number(e.target.value))}}/>
+                        <input type="password" name="i_senha" id="i_senha" required placeholder="Digite sua senha" className="border sm:py-2 px-6 bg-gray-50 text-base w-full" onChange={(e)=>{setSenha(e.target.value)}}/>
                     </div>
                     <button className=" border-gray-600 bg-gray-300 sm:py-2 px-6 cursor-pointer hover:bg-amber-50 hover:outline transition rounded-xl my-4" onClick={()=>{enviarRegistro(nome,email, confirmEmail,senha)}}>Registrar</button>
                 </div>

@@ -10,11 +10,11 @@ export default function Home() {
   const router = useRouter()
 
   const [emailUser, setEmailUser] = useState<string>('')
-  const [senhaUser, setSenhaUser] = useState<number>(0)
+  const [senhaUser, setSenhaUser] = useState<string>('')
 
   const [msgLoginIncorrect, setMsgLoginIncorrect] = useState<boolean>(false)
 
-  function Login(email: string, senha: number){
+  function Login(email: string, senha: string){
     const url = `http://localhost:3000/api?email=${encodeURIComponent(email)}&password=${encodeURIComponent(senha)}`;
 
     fetch(url, {
@@ -63,7 +63,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col">
                       <label htmlFor="i_senha">Senha:</label>
-                      <input type="password" id="i_senha" className="border sm:py-2 px-4 bg-gray-50 text-base" required onChange={(e)=>{setSenhaUser(Number(e.target.value))}}/>
+                      <input type="password" id="i_senha" className="border sm:py-2 px-4 bg-gray-50 text-base" required onChange={(e)=>{setSenhaUser(e.target.value)}}/>
                   </div>
                   <button className=" border-gray-600 bg-gray-300 sm:py-2 px-6 cursor-pointer hover:bg-amber-50 hover:outline transition rounded-xl mb-4" onClick={()=>Login(emailUser, senhaUser)}>Entrar</button>
                 </div>

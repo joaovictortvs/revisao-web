@@ -52,7 +52,7 @@ export default function MyAccount(){
             const user = data.user
             setNome(user.name)
             setEmail(user.email)
-            setAssinatura(user.assinatura)
+            setAssinatura(user.assignature)
         })
     }, [])
 
@@ -64,7 +64,7 @@ export default function MyAccount(){
                 <section className="text-black text-xl flex flex-col items-center justify-center h-3/6">
                     <span>Nome: {nome ? nome : 'carregando...'}</span>
                     <span>Email: {email ? email : 'carregando'}</span>
-                    <span>Assinatura: {assinatura ? assinatura : 'escolha sua assinatura'}</span>
+                    <span>Assinatura: {assinatura}</span>
                 </section>
                 <Link href={`/myAccount/perfil`} className="bg-blue-600 cursor-pointer w-1/6 px-2 py-2 rounded-sm text-center">
                     Alterar meus dados
