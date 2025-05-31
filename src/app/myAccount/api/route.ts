@@ -92,3 +92,35 @@ export async function PATCH(request: Request){
     })
 
 }
+
+export async function POST(request: Request){
+    const { searchParams } = new URL(request.url)
+    const id = searchParams.get('id')
+    const level = searchParams.get('level')
+
+    const generateUniqueId = require('generate-unique-id')
+    // continuar a função de post da pergunta
+
+    const body = await request.json()
+    const newQuestion = {
+        id: generateUniqueId({length: 32, useLetters: false}),
+        title: body.title,
+        answers: body.answers
+    };
+
+    const response = await fetch(`http://localhost:5000/users/${id}`);
+
+    const user = await response.json();
+
+    user.questions[String(level)].push(newQuestion);
+
+    const updateResponse = await fetch(`http://localhost:5000/users/${id}`, {
+        method: 'PUT',
+        headers: {
+            "Content-Type": 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+
+    return new Response(JSON.stringify({message: 'Questão adicionada com sucesso!', status: 200}))
+}

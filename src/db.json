@@ -1,32 +1,126 @@
 {
   "users": [
     {
-      "id": "96717739906896146036069324314719",
-      "name": "tested",
-      "email": "",
-      "password": "1234",
-      "assignature": ""
-    },
-    {
-      "id": "30529463165542018346491249885607",
-      "name": "testeAssina",
-      "email": "",
-      "password": "1111",
-      "assignature": ""
-    },
-    {
-      "id": "62913589644796951330293784421545",
-      "name": "testeSenha",
-      "email": "",
-      "password": "1234",
-      "assignature": "Médio"
-    },
-    {
       "id": "71933817583308345015445247716948",
       "name": "testeEdit",
       "email": "testedit@gmail.com",
       "password": "1234",
-      "assignature": "Médio"
+      "assignature": "Médio",
+      "questions": {
+        "easy": [
+          {
+            "id": "3",
+            "title": "O que foram os pioneiros Grandes Navegações?",
+            "answers": {
+              "answer_a": "Portugal e Espanha",
+              "answer_b": "Inglaterra e França",
+              "answer_c": "Espanha e Inglaterra",
+              "answer_d": "Alemanha e Portugal"
+            }
+          }
+        ],
+        "medium": [
+          {
+            "id": "1",
+            "title": "teste?",
+            "answers": {
+              "answer_a": "Portugal e teste",
+              "answer_b": "Teste e França",
+              "answer_c": "Espanha e Teste",
+              "answer_d": "Teste e Portugal"
+            }
+          }
+        ],
+        "hard": [
+          {
+            "id": "2",
+            "title": "O que foram os pioneiros Grandes Navegações?",
+            "answers": {
+              "answer_a": "teste e teste",
+              "answer_b": "teste e teste",
+              "answer_c": "teste e teste",
+              "answer_d": "teste e teste"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "78379239917179513110375728491753",
+      "name": "testeNewPost",
+      "email": "testepost@gmail.com",
+      "password": "1234",
+      "assignature": "Básico",
+      "questions": {
+        "easy": [
+          {
+            "id": "20774215432408827508733185853559",
+            "title": "teste questao 1",
+            "answers": {
+              "answer_a": "teste1",
+              "answer_b": "teste2",
+              "answer_c": "teste3",
+              "answer_d": "teste4"
+            }
+          },
+          {
+            "id": "37434964815333076286570204315522",
+            "title": "teste questao 2",
+            "answers": {
+              "answer_a": "teste1",
+              "answer_b": "teste2",
+              "answer_c": "teste3",
+              "answer_d": "teste4",
+              "answer_e": "teste5"
+            }
+          },
+          {
+            "id": "56725965132549554256753829187072",
+            "title": "teste questao 3",
+            "answers": {
+              "answer_a": "teste1",
+              "answer_b": "teste2",
+              "answer_c": "teste3",
+              "answer_d": "teste4"
+            }
+          }
+        ],
+        "medium": [
+          {
+            "id": "40042177864675937401020795752370",
+            "title": "teste questao 4",
+            "answers": {
+              "answer_a": "teste1",
+              "answer_b": "teste2",
+              "answer_c": "teste3",
+              "answer_d": "teste4"
+            }
+          }
+        ],
+        "hard": [
+          {
+            "id": "27140593633734966216468546850497",
+            "title": "teste questao 4",
+            "answers": {
+              "answer_a": "teste1",
+              "answer_b": "teste2",
+              "answer_c": "teste3",
+              "answer_d": "teste4",
+              "answer_e": "teste5"
+            }
+          },
+          {
+            "id": "83963703226141345473799899611621",
+            "title": "teste questao 4",
+            "answers": {
+              "answer_a": "teste3",
+              "answer_b": "teste4",
+              "answer_c": "teste5",
+              "answer_d": "teste6"
+            }
+          }
+        ]
+      }
     }
   ]
 }

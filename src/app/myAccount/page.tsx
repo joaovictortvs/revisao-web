@@ -59,7 +59,7 @@ export default function MyAccount(){
     return(
         <div className="w-full flex-auto flex flex-col items-center">
             {msgConfirmDelete && <Message msg="Você realmente quer excluir sua conta?" button={true} confirmDelete={deleteOrNot}/>}
-            <h1 className="p-4 text-3xl my">Minha conta</h1>
+            <h1 className="p-4 text-3xl my-1">Minha conta</h1>
             <div className="h-full w-5/6 bg-gray-200 rounded-xl flex flex-col items-center self-center space-y-2">
                 <section className="text-black text-xl flex flex-col items-center justify-center h-3/6">
                     <span>Nome: {nome ? nome : 'carregando...'}</span>

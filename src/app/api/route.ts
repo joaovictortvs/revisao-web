@@ -7,6 +7,11 @@ import { SearchParams } from "next/dist/server/request/search-params";
         email: string;
         password: string;
         assignature: string;
+        questions: {
+            easy: object[],
+            medium: object[],
+            hard: object[]
+        }
     }
 
 export async function POST(request: Request) {
@@ -19,7 +24,12 @@ export async function POST(request: Request) {
         name: requestData.name,
         email: requestData.email,
         password: requestData.password,
-        assignature: 'Básico'
+        assignature: 'Básico',
+        questions: {
+            easy: [],
+            medium: [],
+            hard: []
+        }
     };
 
     fetch('http://localhost:5000/users',{

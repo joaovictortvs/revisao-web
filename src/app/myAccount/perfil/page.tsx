@@ -77,6 +77,11 @@ export default function Perfil(){
                 .then(res => res.json())
                 .then(data => {
                     const dataUpdated = data.user
+                    setNome(dataUpdated.name)
+                    setAssinatura(dataUpdated.assignature)
+                    setEmail(dataUpdated.email)
+                    setSenha(dataUpdated.password)
+
                     setDadosSalvos(true)
                     setTimeout(()=>{
                         setDadosSalvos(false)
@@ -106,7 +111,7 @@ export default function Perfil(){
                     {editOn &&
                         <>
                             <label htmlFor="i_assinatura">Assinatura:</label>
-                            <select id="i_assinatura" name="i_assinatura" className="py-1 px-4 w-full text-center" onChange={(e)=>setNewAssignature(e.target.value)}>
+                            <select id="i_assinatura" name="i_assinatura" className="py-1 px-4 w-full text-center" onChange={(e)=>setNewAssignature(e.target.value)} defaultValue={assinatura}>
                                 <option value="Básico">Básico</option>
                                 <option value="Médio">Médio</option>
                                 <option value="Premium">Premium</option>
@@ -130,7 +135,13 @@ export default function Perfil(){
 
                     <div className="flex my-2">
                         {!editOn && <button className="border p-2 bg-blue-600 text-gray-100 rounded-sm cursor-pointer" onClick={modeEdition}>Editar informações</button>}
-                        {editOn && <button className="border p-2 bg-blue-600 text-gray-100 rounded-sm cursor-pointer" onClick={()=>editInfo(newName, newEmail, newAssignature, newPassword, reconfirmNewPassword)}>Salvar</button>}
+                        {editOn &&
+                        <div className="flex space-x-4">
+                            <button className="bg-red-600 p-2 text-gray-100 rounded-sm cursor-pointer" onClick={()=>setEditOn(false)}>Cancelar</button>
+                            <button className="border p-2 bg-blue-600 text-gray-100 rounded-sm cursor-pointer" onClick={()=>editInfo(newName, newEmail, newAssignature, newPassword, reconfirmNewPassword)}>Salvar</button>
+                        </div>    
+                        }
+    
                     </div>
                 </div>
              </div>

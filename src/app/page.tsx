@@ -68,7 +68,7 @@ export default function Home() {
                   <button className=" border-gray-600 bg-gray-300 sm:py-2 px-6 cursor-pointer hover:bg-amber-50 hover:outline transition rounded-xl mb-4" onClick={()=>Login(emailUser, senhaUser)}>Entrar</button>
                 </div>
                 <div className="flex flex-col text-sm sm:text-normal mb-4">
-                    <Link href={'/register'}>Ainda não é cliente? Clique aqui.</Link>
+                    <Link href={'/register'}>Registre-se aqui.</Link>
                 </div>
             </div>
         </div>
