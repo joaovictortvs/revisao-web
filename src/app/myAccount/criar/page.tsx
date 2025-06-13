@@ -23,6 +23,7 @@ export default function Criar(){
     const [answer_c, setAnswer_c] = useState<string>('')
     const [answer_d, setAnswer_d] = useState<string>('')
     const [answer_e, setAnswer_e] = useState<string>('')
+    const [correctAnswer, setCorrectAnswer] = useState<string>('')
 
     const [alternativeAnswers, setAlternativeAnswers] = useState<typeAlternatives>()
 
@@ -49,7 +50,8 @@ export default function Criar(){
         
         const bodyPergunta = {
             title: title,
-            answers: altsQuestion
+            answers: altsQuestion,
+            answer_correct: correctAnswer
         }
 
         fetch(`http://localhost:3000/myAccount/api?id=${id}&level=${level}`, {
@@ -85,24 +87,45 @@ export default function Criar(){
                     <div className="flex flex-col">
                         <label htmlFor="alternativa_A">Alternativa A:</label>
                         <input type="text" id="alternativa_A" className="border border-black py-2 p-2 rounded-sm" onChange={(e)=> setAnswer_a(e.target.value)}/>
+                        <div className="space-x-2">
+                            <input type="radio" name="alternativa_correct" id="alternativaA_correct" className="self-start text-black" value={answer_a} onChange={(e)=> setCorrectAnswer(e.target.value)}/>
+                            <label htmlFor="alternativaA_correct" className="text-sm">Alternativa correta</label>
+                        </div>
+                       
                     </div>
                     <div className="flex flex-col">
                         <label htmlFor="alternativa_B">Alternativa B:</label>
                         <input type="text" id="alternativa_B" className="border border-black py-2 p-2 rounded-sm" onChange={(e)=> setAnswer_b(e.target.value)}/>
+                        <div className="space-x-2">
+                            <input type="radio" name="alternativa_correct" id="alternativaB_correct" className="self-start text-black" value={answer_b} onChange={(e)=> setCorrectAnswer(e.target.value)}/>
+                            <label htmlFor="alternativaA_correct" className="text-sm">Alternativa correta</label>
+                        </div>
                     </div>
                     <div className="flex flex-col">
                         <label htmlFor="alternativa_C">Alternativa C:</label>
                         <input type="text" id="alternativa_C" className="border border-black py-2 p-2 rounded-sm" onChange={(e)=> setAnswer_c(e.target.value)}/>
+                        <div className="space-x-2">
+                            <input type="radio" name="alternativa_correct" id="alternativaC_correct" className="self-start text-black" value={answer_c} onChange={(e)=> setCorrectAnswer(e.target.value)}/>
+                            <label htmlFor="alternativaA_correct" className="text-sm">Alternativa correta</label>
+                        </div>
                     </div>
                     <div className="flex flex-col">
                         <label htmlFor="alternativa_D">Alternativa D:</label>
                         <input type="text" id="alternativa_D" className="border border-black py-2 p-2 rounded-sm" onChange={(e)=> setAnswer_d(e.target.value)}/>
+                        <div className="space-x-2">
+                            <input type="radio" name="alternativa_correct" id="alternativaD_correct" className="self-start text-black" value={answer_d} onChange={(e)=> setCorrectAnswer(e.target.value)}/>
+                            <label htmlFor="alternativaA_correct" className="text-sm">Alternativa correta</label>
+                        </div>
                     </div>
                      {addAlternativa &&
                         <>
                             <div className="flex flex-col">
                                 <label htmlFor="alternativa_E">Alternativa E:</label>
                                 <input type="text" id="alternativa_E" className="border border-black py-2 p-2 rounded-sm" onChange={(e)=> setAnswer_e(e.target.value)}/>
+                                <div className="space-x-2">
+                                    <input type="radio" name="alternativa_correct" id="alternativaE_correct" className="self-start text-black" value={answer_e} onChange={(e)=> setCorrectAnswer(e.target.value)}/>
+                                    <label htmlFor="alternativaA_correct" className="text-sm">Alternativa correta</label>
+                                 </div>
                             </div>
                             <span onClick={()=>{setAddAlternativa(false); setAnswer_e('')}}><FaMinus className="text-4xl cursor-pointer text-blue-900 bg-gray-400 py-2 px-2"/></span>
                         </>

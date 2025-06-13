@@ -11,7 +11,12 @@ import { SearchParams } from "next/dist/server/request/search-params";
             easy: object[],
             medium: object[],
             hard: object[]
+        },
+        stats: {
+            correct_answers: number,
+            answered_questions: number
         }
+       
     }
 
 export async function POST(request: Request) {
@@ -29,7 +34,12 @@ export async function POST(request: Request) {
             easy: [],
             medium: [],
             hard: []
+        },
+        stats: {
+            correct_answers: 0,
+            answered_questions: 0
         }
+       
     };
 
     fetch('http://localhost:5000/users',{

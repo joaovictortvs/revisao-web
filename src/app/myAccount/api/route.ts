@@ -5,7 +5,16 @@ type User = {
         name: string,
         email: string,
         password: string,
-        assignature: string
+        assignature: string,
+        questions: {
+            easy: object[],
+            medium: object[],
+            hard: object[]
+        },
+        stats: {
+            correct_answers: number,
+            aswered_questions: number
+        }
     }
 
 export async function GET(request: Request){
@@ -99,13 +108,13 @@ export async function POST(request: Request){
     const level = searchParams.get('level')
 
     const generateUniqueId = require('generate-unique-id')
-    // continuar a função de post da pergunta
-
+   
     const body = await request.json()
     const newQuestion = {
         id: generateUniqueId({length: 32, useLetters: false}),
         title: body.title,
-        answers: body.answers
+        answers: body.answers,
+        answer_correct: body.answer_correct
     };
 
     const response = await fetch(`http://localhost:5000/users/${id}`);

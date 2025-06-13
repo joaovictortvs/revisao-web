@@ -1,125 +1,108 @@
 {
   "users": [
     {
-      "id": "71933817583308345015445247716948",
-      "name": "testeEdit",
-      "email": "testedit@gmail.com",
-      "password": "1234",
-      "assignature": "Médio",
-      "questions": {
-        "easy": [
-          {
-            "id": "3",
-            "title": "O que foram os pioneiros Grandes Navegações?",
-            "answers": {
-              "answer_a": "Portugal e Espanha",
-              "answer_b": "Inglaterra e França",
-              "answer_c": "Espanha e Inglaterra",
-              "answer_d": "Alemanha e Portugal"
-            }
-          }
-        ],
-        "medium": [
-          {
-            "id": "1",
-            "title": "teste?",
-            "answers": {
-              "answer_a": "Portugal e teste",
-              "answer_b": "Teste e França",
-              "answer_c": "Espanha e Teste",
-              "answer_d": "Teste e Portugal"
-            }
-          }
-        ],
-        "hard": [
-          {
-            "id": "2",
-            "title": "O que foram os pioneiros Grandes Navegações?",
-            "answers": {
-              "answer_a": "teste e teste",
-              "answer_b": "teste e teste",
-              "answer_c": "teste e teste",
-              "answer_d": "teste e teste"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "78379239917179513110375728491753",
-      "name": "testeNewPost",
-      "email": "testepost@gmail.com",
+      "id": "53745938398143838269942278973652",
+      "name": "testecontanova",
+      "email": "testecontanova@gmail.com",
       "password": "1234",
       "assignature": "Básico",
       "questions": {
         "easy": [
           {
-            "id": "20774215432408827508733185853559",
-            "title": "teste questao 1",
-            "answers": {
-              "answer_a": "teste1",
-              "answer_b": "teste2",
-              "answer_c": "teste3",
-              "answer_d": "teste4"
-            }
-          },
-          {
-            "id": "37434964815333076286570204315522",
-            "title": "teste questao 2",
+            "id": "38034810112861788350414001606345",
+            "title": "teste resposta questao",
             "answers": {
               "answer_a": "teste1",
               "answer_b": "teste2",
               "answer_c": "teste3",
               "answer_d": "teste4",
               "answer_e": "teste5"
-            }
+            },
+            "answer_correct": "teste5"
           },
           {
-            "id": "56725965132549554256753829187072",
-            "title": "teste questao 3",
+            "id": "16900707542631254110148630599761",
+            "title": "teste 2 questão",
             "answers": {
-              "answer_a": "teste1",
-              "answer_b": "teste2",
-              "answer_c": "teste3",
-              "answer_d": "teste4"
-            }
+              "answer_a": "teste",
+              "answer_b": "teste1",
+              "answer_c": "teste2",
+              "answer_d": "teste3"
+            },
+            "answer_correct": "teste1"
+          }
+        ],
+        "medium": [],
+        "hard": []
+      },
+      "stats": {
+        "correct_answers": 1,
+        "answered_questions": 3
+      }
+    },
+    {
+      "id": "91430903587837952296690039223523",
+      "name": "teste1",
+      "email": "testenovopost@gmail.com",
+      "password": "1234",
+      "assignature": "Básico",
+      "questions": {
+        "easy": [
+          {
+            "id": "14923505133264061506343477984998",
+            "title": "teste questao correta",
+            "answers": {
+              "answer_a": "teste",
+              "answer_b": "teste 222",
+              "answer_c": "teste 333",
+              "answer_d": "teste 444"
+            },
+            "answer_correct": "teste"
+          },
+          {
+            "id": "67676783316560558146668764943734",
+            "title": "teste outra questao",
+            "answers": {
+              "answer_a": "teste",
+              "answer_b": "teste1",
+              "answer_c": "teste2",
+              "answer_d": "teste3",
+              "answer_e": "teste4"
+            },
+            "answer_correct": "teste4"
           }
         ],
         "medium": [
           {
-            "id": "40042177864675937401020795752370",
-            "title": "teste questao 4",
-            "answers": {
-              "answer_a": "teste1",
-              "answer_b": "teste2",
-              "answer_c": "teste3",
-              "answer_d": "teste4"
-            }
-          }
-        ],
-        "hard": [
-          {
-            "id": "27140593633734966216468546850497",
-            "title": "teste questao 4",
+            "id": "53175111112726948700163645809237",
+            "title": "teste medio questoes",
             "answers": {
               "answer_a": "teste1",
               "answer_b": "teste2",
               "answer_c": "teste3",
               "answer_d": "teste4",
               "answer_e": "teste5"
-            }
-          },
+            },
+            "answer_correct": "teste1"
+          }
+        ],
+        "hard": [
           {
-            "id": "83963703226141345473799899611621",
-            "title": "teste questao 4",
+            "id": "99886368638955258194439405986129",
+            "title": "teste hard question",
             "answers": {
-              "answer_a": "teste3",
-              "answer_b": "teste4",
-              "answer_c": "teste5",
-              "answer_d": "teste6"
-            }
+              "answer_a": "teste 1",
+              "answer_b": "teste2",
+              "answer_c": " teste 3",
+              "answer_d": "teste 4"
+            },
+            "answer_correct": ""
           }
         ]
+      },
+      "stats": {
+        "correct_answers": 4,
+        "answered_questions": 13
       }
     }
   ]
