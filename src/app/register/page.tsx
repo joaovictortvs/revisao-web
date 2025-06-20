@@ -1,16 +1,19 @@
 'use client'
 import { useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 import Message from "@/components/Message";
 
 export default function Register(){
+
+    const router = useRouter()
 
     const [nome, setNome] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [confirmEmail, setConfirmEmail] = useState<string>('')
     const [senha, setSenha] = useState<string>('')
 
+    const [msgRegistrado, setMsgRegistrado] = useState(false)
     const [msgError, setMsgError] = useState(false)
 
     type registerData = {
@@ -49,11 +52,20 @@ export default function Register(){
         .then(res => res.json())
         .then(res => console.log(res));
 
+        setMsgRegistrado(true)
+
+        setTimeout(()=>{
+            setMsgRegistrado(false)
+            router.push('/')
+        }, 1500)
+        
+
     }
 
 
     return(
         <div className="w-screen h-screen bg-gray-200 flex justify-center items-center">
+            {msgRegistrado && <Message msg="Registrado com sucesso!"/>}
             {msgError && <Message msg="Verifique se o e-mail está correto."/>}
             <div className="text-black bg-amber-50 max-w-5/6 h-auto sm:h-4/6 sm:w-4/6 flex flex-col justify-center sm:flex-row items-center rounded-2xl overflow-hidden"> 
                 <div className="h-full w-3/6 flex flex-col items-center">
