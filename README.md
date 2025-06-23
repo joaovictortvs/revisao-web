@@ -29,8 +29,7 @@
 <h2>🚀 Tecnologias utilizadas</h2>
 <ul>
   <li><strong>Next.js</strong></li>
-  <li><strong>React</strong></li>
-  <li><strong>TypeScript</strong> (se aplicável)</li>
-  <li><strong>Tailwind CSS</strong> (se aplicável)</li>
-  <li><strong>JSON Server / API REST</strong> (se aplicável)</li>
+  <li><strong>TypeScript</strong></li>
+  <li><strong>Tailwind CSS</strong></li>
+  <li><strong>JSON Server / API REST</strong></li>
 </ul>
