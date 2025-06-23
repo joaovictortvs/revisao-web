@@ -8,7 +8,8 @@ import Message from "@/components/Message"
 export default function MyAccount(){
 
     const router = useRouter();
-    const id = sessionStorage.getItem('id')
+    
+    const [id, setId] = useState<string | null>()
 
     const [nome, setNome] = useState<string>('')
     const [email, setEmail] = useState<string>('')
@@ -41,7 +42,10 @@ export default function MyAccount(){
     }
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/myAccount/api?id=${id}`, {
+        const idUser = sessionStorage.getItem('id')
+        setId(idUser)
+
+        fetch(`http://localhost:3000/myAccount/api?id=${idUser}`, {
             method: 'GET',
             headers: {
                 "Content-type": 'application/json'

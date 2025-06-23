@@ -5,7 +5,7 @@ import Message from "@/components/Message"
 
 export default function Perfil(){   
 
-    const id = sessionStorage.getItem('id')
+    const [id, setId] = useState<string | null>()
 
     const [editOn, setEditOn] = useState(false)
 
@@ -25,6 +25,9 @@ export default function Perfil(){
     const [errorSenha, setErrorSenha] = useState<boolean>(false)
 
     useEffect(()=>{
+        const id = sessionStorage.getItem('id')
+        setId(id)
+
         fetch(`http://localhost:3000/myAccount/api?id=${id}`, {
             method: 'GET',
             headers: {

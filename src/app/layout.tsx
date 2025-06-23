@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Office Scale",
+  title: "Revisão Web",
   description: "",
 };
 

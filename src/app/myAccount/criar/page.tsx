@@ -1,11 +1,19 @@
 'use client'
 import { FaPlus, FaMinus } from "react-icons/fa"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-export default function Criar(){
+import Message from "@/components/Message"
 
-    const id = sessionStorage.getItem('id')
+export default function Criar(){    
 
+    const [id, setId] = useState<string | null>()
+
+    useEffect(()=>{
+        const idUser = sessionStorage.getItem('id')
+        setId(idUser)
+    }, [])
+    
+    const [created, setCreated] = useState<boolean>(false)
     const [addAlternativa, setAddAlternativa] = useState<boolean>(false)
 
     interface typeAlternatives {
@@ -61,10 +69,16 @@ export default function Criar(){
             },
             body: JSON.stringify(bodyPergunta)
         })
+
+        setCreated(true)
+        setTimeout(()=>{
+            setCreated(false)
+        }, 2000)
     }
 
     return(
          <div className="w-full flex-auto flex flex-col items-center text-black">
+            {created && <Message msg="Questão criada com sucesso!"/>}
             <h1 className="p-4 text-3xl my text-white">Criar perguntas</h1>
              <div className="h-full w-5/6 bg-gray-200 rounded-xl flex flex-col items-center self-center space-y-2">
                 <div className="w-4/6 flex flex-col m-4">

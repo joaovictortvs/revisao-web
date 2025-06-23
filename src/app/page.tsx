@@ -47,11 +47,11 @@ export default function Home() {
         <div className="text-black bg-amber-50 max-w-5/6 h-auto sm:h-4/6 sm:w-5/6 flex flex-col sm:flex-row items-center rounded-2xl overflow-hidden">
             <div className="w-3/6 flex flex-col items-center justify-start  h-full border-b sm:border-r sm:border-b-0 mx-2 mb-2">
                 <div className="h-2/6 flex items-center">
-                  <h1 className="text-3xl p-8 sm:text-4xl text-center">Escalas para sua empresa!</h1>
+                  <h1 className="text-3xl p-8 sm:text-4xl text-center">Revisão dos seus estudos!</h1>
                 </div>
                 <div className="flex flex-col items-center justify-center h-3/6 space-y-4">
-                  <p className="text-xl sm:text-2xl text-center">Organize e planeje sua empresa da melhor forma.</p>
-                  <p className="text-xl sm:text-2xl text-center">Tarefas, escalas, tudo em um só lugar!</p>
+                  <p className="text-xl sm:text-2xl text-center">Organize e planeje seus estudos da melhor forma.</p>
+                  <p className="text-xl sm:text-2xl text-center">Revisões, taxa de acerto, tudo para o seu melhor desempenho!</p>
                 </div>
             </div>
             <div className="w-3/6 h-auto flex flex-col items-center">

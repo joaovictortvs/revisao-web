@@ -6,7 +6,8 @@ import Message from "@/components/Message"
 
 export default function Question(){
     
-    const id = sessionStorage.getItem('id')
+    const [id, setId] = useState<string | null>()
+
     const searchParams = useSearchParams()
     const level = searchParams.get('level')
     const params = useParams()
@@ -33,7 +34,10 @@ export default function Question(){
     const [answeredQuestions, setAnsweredQuestions] = useState<number>(0)
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/myAccount/api?id=${id}`, {
+        const idUser = sessionStorage.getItem('id')
+        setId(idUser)
+
+        fetch(`http://localhost:3000/myAccount/api?id=${idUser}`, {
             method: 'GET',
             headers: {
                 "Content-type": 'application/json'

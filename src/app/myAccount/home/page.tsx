@@ -2,11 +2,16 @@
 import { FaArrowDown } from "react-icons/fa"
 import Link from "next/link"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Home(){
 
-    const id = sessionStorage.getItem('id')
+    const [id, setId] = useState<string | null>()
+
+    useEffect(()=>{
+        const idUser = sessionStorage.getItem('id')
+        setId(idUser)
+    }, [])
 
     const [showStats, setShowStats] = useState(false)
     const [questionsAnswered, setQuestionsAnswered] = useState<number>()
@@ -26,7 +31,7 @@ export default function Home(){
         setCorrectAnswers(correctAnswered)
 
         const acertoEstatistica = (correctAnswered / totalAnswered) * 100
-        setAcertosPorcentagem(acertoEstatistica)
+        setAcertosPorcentagem(Number(acertoEstatistica.toFixed(1)))
 
         setShowStats(!showStats)
     }
